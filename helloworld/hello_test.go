@@ -13,14 +13,20 @@ func TestHello(t *testing.T) {
     }
 
     t.Run("saying hello to people", func(t *testing.T) {
-        got := Hello("Crist")
+        got := Hello("Crist", "English")
         want := "Hello Crist"
         assertCorrectMessage(t, got, want)
     })
 
     t.Run("saying hello world when empty", func(t *testing.T) {
-        got := Hello("")
+        got := Hello("", "")
         want := "Hello World"
+        assertCorrectMessage(t, got, want)
+    })
+
+    t.Run("saying hello to people", func(t *testing.T) {
+        got := Hello("Crist", "Spanish")
+        want := "Hola Crist"
         assertCorrectMessage(t, got, want)
     })
 
